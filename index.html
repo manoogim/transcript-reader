@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Transcript Reader</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>📄 Legal Transcript Reader</h1>
+        <p class="subtitle">Upload a PDF and listen to it on any device</p>
+
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📁</div>
+            <p><strong>Click to upload</strong> or drag and drop</p>
+            <p style="font-size: 12px; color: #999; margin-top: 5px;">PDF files only</p>
+            <input type="file" id="fileInput" accept=".pdf">
+        </div>
+
+        <div id="status"></div>
+
+        <div class="text-preview" id="textPreview"></div>
+
+        <div class="controls" id="controls">
+            <div class="control-group">
+                <label>Speech Rate: <span id="rateValue">1.0</span>x</label>
+                <input type="range" id="rateControl" min="0.5" max="2.0" step="0.1" value="1.0">
+            </div>
+
+            <div class="control-group">
+                <label>Pitch: <span id="pitchValue">1.0</span></label>
+                <input type="range" id="pitchControl" min="0.5" max="2.0" step="0.1" value="1.0">
+            </div>
+
+            <div class="button-group">
+                <button class="btn" id="playBtn">▶️ Play</button>
+                <button class="btn" id="pauseBtn" disabled>⏸️ Pause</button>
+                <button class="btn" id="stopBtn" disabled>⏹️ Stop</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
